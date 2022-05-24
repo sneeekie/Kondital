@@ -12,4 +12,15 @@
             int weight = Convert.ToInt16(Console.ReadLine());
         }
     }
+     class FitnessRating 
+    {
+        public static double FitnessRatingCalculated(double RestHeartRate, double MaxHeartRate)     //FitnessRatingCalculated = Kondital
+        {
+            return Math.Round((RestHeartRate / MaxHeartRate) * 15.3);                               //Here we calculate FitnessRatingCalculated. RestHeartRate / MaxHeartRate * 15.3
+        }
+        public static double MaxOxygenCalculated(double FitnessRating, double Weight)               //MaxOxygenCalculated = Maxiltoptagelse
+        {
+            return Math.Round((FitnessRating * Weight) / 1000);                                     //Here we calculate MaxAxygenCalculated. FitnessRating * Weight / 1000
+        }
+    }
 }
