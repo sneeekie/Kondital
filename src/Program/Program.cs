@@ -2,14 +2,24 @@
     class Program 
     {
         static void Main() 
-        {
+        {   
+            try
+            {
             //The following lines converts the users input from a string to int
-            Console.WriteLine("Your resting heart rate: ");
+            Console.Write("Your resting heart rate: ");
             double restHeartRate = Convert.ToInt16(Console.ReadLine());
-            Console.WriteLine("Your maximum heart rate: ");
+            Console.Write("Your maximum heart rate: ");
             double maxHeartRate = Convert.ToInt16(Console.ReadLine());
-            Console.WriteLine("Your weight in kg: ");
+            Console.Write("Your weight in kg: ");
             int weight = Convert.ToInt16(Console.ReadLine());
+
+            double FitnessRatingResult = FitnessRating.FitnessRatingCalculated(restHeartRate, maxHeartRate);
+            Console.WriteLine(FitnessRatingResult);
+            }
+            catch(FormatException e)                                                                //This exception is being used if the user types in a string
+            {
+                Console.WriteLine(e.Message);                                                       //NO FINALLY
+            }
         }
     }
      class FitnessRating 
